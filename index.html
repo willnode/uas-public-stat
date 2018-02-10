@@ -12,12 +12,16 @@
 <body>
   <div id="app">
     <div id="head">
-      <input type="number" id="pubId" v-model.number="pubId" placeholder="Input publisher number ID (xxxxx) here">
+      <input id="pubId" v-model="pubId" placeholder="Input publisher number ID (xxxxx) here. Leave blank to show for all assets.">
+      <select id="pubOrder" v-model="order">
+        <option v-for="c in orderChoices">{{c}}</option>
+      </select>
       <button @click="request()">
         Request
       </button>
     </div>
     <div class="list">
+      <p v-if='message' class="message">{{message}}</p>
       <div v-for="i in data.results" class="item">
         <div class="icon">
           <a :href="'https://www.assetstore.unity3d.com/en/#!/content/' + i.id" target="_blank" rel="noopener nofollow noreferrer">
@@ -26,23 +30,28 @@
         </div>
         <div class="info">
           <div class="lev lev-1">
-            <span class="id">{{i.id}}</span>
-            <span class="title" :title="i.title">{{i.title_english}}</span>
-            <span class="price">{{i.price_usd}}$</span>
+            <span class="id bubble" :title="'publisher: ' + i.publisher.id">{{i.id}}</span>
+            <span class="title wide" :title="i.title + ' / ' + i.publisher.label">{{i.title_english}}</span>
+            <span class="price" :class="{ semi:(i.price_usd.slice(0, -1) &lt; 0.1) }">{{i.price_usd}}$</span>
+          </div>
+          <div class="lev lev-1-extra" v-if="showPublishers">
+              <span class="publisherid bubble" :title="i.publisher.id">{{i.publisher.id}}</span>
+              <span class="publisher wide" :title="i.publisher.label_english">{{i.publisher.label_english}}</span>
+              <a class="weblink" :href="i.publisher.url" target="_blank" rel="noopener nofollow">🔗↗</a>
           </div>
           <div class="lev lev-2">
-            <span class="version" :title="i.package_version_id">{{i.version}}</span>
-            <span class="publish" :title="i.pubdate_iso">{{i.pubdate}}</span>
-            <span>{{i.category.label}}</span>
+            <span class="version bubble" :title="i.package_version_id">{{i.version}}</span>
+            <span class="publish wide" :title="i.pubdate_iso">{{i.pubdate}}</span>
+            <span><i>{{i.category.label}}</i></span>
           </div>
           <div class="lev lev-3">
-            <span class="rating" v-if="i.rating.count">
+            <span class="rating wide" v-if="i.rating.count">
               <span v-for="j in i.rating.average">⭐</span> ({{i.rating.count}})
             </span>
-            <span class="rating norating" v-else>
+            <span class="rating semi wide" v-else>
               No rating info
             </span>
-            <span class="hotness">🔥 {{i.hotness.toString("0.00")}}</span>
+            <span class="hotness">🔥 {{i.hotness}}</span>
           </div>
         </div>
       </div>
