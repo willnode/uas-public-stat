@@ -1,80 +1,80 @@
 body {
-    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 15px;
-    max-width: 1200px;
-    margin: 10px auto;
+	font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 15px;
+	max-width: 1200px;
+	margin: 10px auto;
 }
 
 #head {
-    display: flex;
-    margin-bottom: 20px;
+	display: flex;
+	margin-bottom: 20px;
 }
 
 #head > input {
-    flex-grow: 1;
-    margin-right: 5px;
+	flex-grow: 1;
+	margin-right: 5px;
 }
 
 .item {
-    margin: 5px;
-    display: flex;
-    align-items: center;
+	margin: 5px;
+	display: flex;
+	align-items: center;
 }
 
 .lev {
-    display: flex;
-    flex-grow: 1;
-    margin: 5px 0px;
+	display: flex;
+	flex-grow: 1;
+	margin: 5px 0px;
 }
 
 .info {
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-items: unsafe;
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-items: unsafe;
 }
 
 .title {
-    font-size: 18px;
-    font-weight: bold;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 .wide {
-    flex-grow: 1;
+	flex-grow: 1;
 }
 
 .semi {
-    color: gray;
+	color: gray;
 }
 
 .bubble {
-    border-radius: 2px;
-    margin-right: 5px;
-    color: white;
-    font-size: 12px;
-    padding: 3px;
-    align-self: center;
+	border-radius: 2px;
+	margin-right: 5px;
+	color: white;
+	font-size: 12px;
+	padding: 3px;
+	align-self: center;
 }
 
 .id {
-    background-color: #07c;
+	background-color: #07c;
 }
 
 .version {
-    background-color: #c70;
+	background-color: #c70;
 }
 
 .publisherid {
-    background-color: #70c;
+	background-color: #70c;
 }
 
 #pages {
-    text-align: center;
+	text-align: center;
 }
 
 .message {
-    text-align: center;
+	text-align: center;
 }
 
 .weblink {text-decoration: none;}
