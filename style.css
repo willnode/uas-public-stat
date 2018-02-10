@@ -1,0 +1,68 @@
+body {
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+#head {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#head > input {
+    flex-grow: 1;
+    margin-right: 5px;
+}
+
+.item {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.lev {
+    display: flex;
+    flex-grow: 1;
+}
+
+.info {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.rating, .publish {
+    flex-grow: 1;
+}
+
+.norating {
+    color: gray;
+}
+
+.id, .version {
+    background-color: #07c;
+    border-radius: 2px;
+    margin-right: 5px;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    align-self: center;
+}
+
+.version {
+    background-color: #c70;
+}
+
+.lev-2 {
+    margin: 10px 0px;
+}
+
+#pages {
+    text-align: center;
+}
