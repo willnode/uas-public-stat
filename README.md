@@ -14,6 +14,8 @@ Configuration will be saved in `localStorage` while responses are cached in `ses
 
 This tool also tracks the hotness of every package that you're looking for. Tracking works by caching the initial hotness the first time it appeared and then calculated with difference with current hotness value. The cache is saved in `localStorage` so it doesn't expire.
 
+Note the first time you using this tool there's nothing to compare. Wait for few hours before retrying if you want to see the difference.
+
 You can clear the cache by clicking `Reset Hotness Difference` near bottom of page. It also worth to note that UT usually change the hotness rating every few hours even though it's a pretty small difference.
 
 ## Disclaimer
@@ -26,4 +28,4 @@ This is an unnoficial tool. Feel free to fill an issue in issues tab.
 
 [I also made another similar tool](https://github.com/willnode/uas-private-stat/).
 
-[unitybuzz.com](http://unitybuzz.com) <- This site have even better asset tracking over time.
+[unitybuzz.com](http://unitybuzz.com) <- This site have better (and server-based) asset tracking over time.
