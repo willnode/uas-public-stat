@@ -24,7 +24,7 @@
       <p v-if='message' class="message">{{message}}</p>
       <div v-for="i in data.results" class="item">
         <div class="icon">
-          <a :href="'https://www.assetstore.unity3d.com/en/#!/content/' + i.id" target="_blank" rel="noopener nofollow noreferrer">
+          <a :href="'https://www.assetstore.unity3d.com/en/#!/content/' + i.id" target="_blank" rel="noopener noreferrer">
             <img :src="i.icon">
           </a>
         </div>
@@ -35,14 +35,16 @@
             <span class="price" :class="{ semi:(i.price_usd.slice(0, -1) &lt; 0.1) }">{{i.price_usd}}$</span>
           </div>
           <div class="lev lev-1-extra" v-if="showPublishers">
-              <span class="publisherid bubble" :title="i.publisher.id">{{i.publisher.id}}</span>
-              <span class="publisher wide" :title="i.publisher.label_english">{{i.publisher.label_english}}</span>
-              <a class="weblink" :href="i.publisher.url" target="_blank" rel="noopener nofollow">🔗↗</a>
+            <span class="publisherid bubble" :title="i.publisher.id">{{i.publisher.id}}</span>
+            <span class="publisher wide" :title="i.publisher.label_english">{{i.publisher.label_english}}</span>
+            <a :href="i.publisher.url" target="_blank" rel="noopener nofollow">🔗↗</a>
           </div>
           <div class="lev lev-2">
             <span class="version bubble" :title="i.package_version_id">{{i.version}}</span>
             <span class="publish wide" :title="i.pubdate_iso">{{i.pubdate}}</span>
-            <span><i>{{i.category.label}}</i></span>
+            <span>
+              <i>{{i.category.label}}</i>
+            </span>
           </div>
           <div class="lev lev-3">
             <span class="rating wide" v-if="i.rating.count">
@@ -51,17 +53,22 @@
             <span class="rating semi wide" v-else>
               No rating info
             </span>
+            <span v-if="hotnessDB[i.id] && hotnessDB[i.id].d" class="hotnessdiff">{{ hotnessDB[i.id].d > 0 ? "⬆" : "🔻"}} {{hotnessDB[i.id].d.toFixed(3)}}</span>
             <span class="hotness">🔥 {{i.hotness}}</span>
           </div>
         </div>
       </div>
     </div>
     <div id="pages">
-      <button v-for="i in pageMax" :disabled="page===i" @click="page=i;request()"> {{i}} </button>
+      <button v-for="i in pageMax" :disabled="page===i" @click="page=i;request()">{{i}}</button>
+      <br>
+      <button @click="resetHotnessDB()">Reset Hotness Difference</button>
     </div>
   </div>
+  <footer>
+    <a href="https://github.com/willnode/uas-public-stat#readme" target="_blank" rel="noopener">💡 Visit Github source for manual</a>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
   <script src="main.js"></script>
 </body>
-
 </html>

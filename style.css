@@ -32,7 +32,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	justify-items: unsafe;
 }
 
 .title {
@@ -69,12 +68,20 @@ body {
 	background-color: #70c;
 }
 
-#pages {
+.hotnessdiff {
+	margin-right: 10px;
+}
+
+#pages, .message, footer {
 	text-align: center;
 }
 
-.message {
-	text-align: center;
+footer {
+	margin-top: 30px;
+	font-size: 12px;
 }
 
-.weblink {text-decoration: none;}
+a {
+	text-decoration: none;
+	color: black;
+}
