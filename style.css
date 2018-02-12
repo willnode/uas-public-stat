@@ -15,6 +15,10 @@ body {
 	margin-right: 5px;
 }
 
+button {
+	cursor: pointer;
+}
+
 .item {
 	margin: 5px;
 	display: flex;
@@ -79,6 +83,11 @@ body {
 footer {
 	margin-top: 30px;
 	font-size: 12px;
+}
+
+footer span {
+	margin: 10px 0px;
+	display: block;
 }
 
 a {

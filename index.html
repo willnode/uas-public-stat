@@ -32,7 +32,7 @@
           <div class="lev lev-1">
             <span class="id bubble" :title="'publisher: ' + i.publisher.id">{{i.id}}</span>
             <span class="title wide" :title="i.title + ' / ' + i.publisher.label">{{i.title_english}}</span>
-            <span class="price" :class="{ semi:(i.price_usd.slice(0, -1) &lt; 0.1) }">{{i.price_usd}}$</span>
+            <span class="price" :class="{ semi:(i.price_usd.slice(0, -1) &lt; 0.1) }">{{i.price_usd}} $</span>
           </div>
           <div class="lev lev-1-extra" v-if="showPublishers">
             <span class="publisherid bubble" :title="i.publisher.id">{{i.publisher.id}}</span>
@@ -64,10 +64,11 @@
       <br>
       <button @click="resetHotnessDB()">Reset Hotness Difference</button>
     </div>
-  </div>
-  <footer>
-    <a href="https://github.com/willnode/uas-public-stat#readme" target="_blank" rel="noopener">💡 Visit Github source for manual</a>
-  </footer>
+    <footer>
+        <span>📜 Viewing {{(page-1)*pageMaxItems+1}}-{{Math.min((page)*pageMaxItems,data.total)}} of {{data.total}} items in the list</span>
+        <a href="https://github.com/willnode/uas-public-stat#readme" target="_blank" rel="noopener">💡 Visit Github source for manual</a>
+      </footer>
+      </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
   <script src="main.js"></script>
 </body>

@@ -7,6 +7,7 @@ var data = {
 	data: JSON.parse(sessionStorage['uas-public-data'] || '{"total": 0, "results":[] }'),
 	page: 1,
 	pageMax: 1,
+	pageMaxItems: pageMaxItems,
 	pubId: localStorage['uas-id'] || '',
 	order: localStorage['uas-order'] || 'popularity',
 	hotnessDB: JSON.parse(localStorage['uas-public-hotness'] || "{}"),
