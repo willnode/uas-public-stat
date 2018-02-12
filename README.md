@@ -4,7 +4,7 @@
 
 This is a tool to leverage public statistics for Asset store packages for given [publisher ID](https://i.imgur.com/uBFYQMA.png).
 
-It does work by fetching internal asset store API then using [cors-anywhere](https://cors-anywhere.herukoapp.com) to bypass CORS restriction.
+It does work by fetching internal asset store API then using [cors-anywhere](https://cors-anywhere.herokuapp.com) to bypass CORS restriction.
 
 Few examples of public statistics that exposed in this tool are like package ID, exact update date, hotness/populariy score, etc. There also icons that when clicked, will opening a new tab to asset store page of clicked asset.
 

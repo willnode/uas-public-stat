@@ -53,7 +53,7 @@
             <span class="rating semi wide" v-else>
               No rating info
             </span>
-            <span v-if="hotnessDB[i.id] && hotnessDB[i.id].d" class="hotnessdiff">{{ hotnessDB[i.id].d > 0 ? "⬆" : "🔻"}} {{hotnessDB[i.id].d.toFixed(3)}}</span>
+            <span v-if="hotnessDB[i.id]" class="hotnessdiff">{{ (i.hotness - hotnessDB[i.id]) > 0 ? "📈" : "📉"}} {{(i.hotness - hotnessDB[i.id]).toFixed(3)}}</span>
             <span class="hotness">🔥 {{i.hotness}}</span>
           </div>
         </div>
