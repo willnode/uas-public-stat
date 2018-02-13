@@ -21,8 +21,8 @@ var data = {
 		// This also means that this tool can be a light alternative for searching assets.
 		// Unfornatunely, I haven't check the EULA for that :/
 		// Anyway I will make this easier by assuming comma for separated query.
-		var url = `${apiUrl}?q=publisher%3A${(data.pubId + "").replace(/,/g, '&q=')
-			}&q=type:content&rows=${pageMaxItems}&page=${data.page}&order_by=${data.order}`;
+		var q = (shouldShowPublisher(data.pubId) ? "" : "q=publisher%3A") + (data.pubId + "").replace(/,/g, '&q=');
+		var url = `${apiUrl}?${q}&q=type:content&rows=${pageMaxItems}&page=${data.page}&order_by=${data.order}`;
 
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function () {

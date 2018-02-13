@@ -61,14 +61,14 @@
     </div>
     <div id="pages">
       <button v-for="i in pageMax" :disabled="page===i" @click="page=i;request()">{{i}}</button>
-      <br>
-      <button @click="resetHotnessDB()">Reset Hotness Difference</button>
     </div>
     <footer>
-        <span>📜 Viewing {{(page-1)*pageMaxItems+1}}-{{Math.min((page)*pageMaxItems,data.total)}} of {{data.total}} items found in query</span>
-        <a href="https://github.com/willnode/uas-public-stat#readme" target="_blank" rel="noopener">💡 Visit Github source for manual</a>
-      </footer>
-      </div>
+      <button @click="resetHotnessDB()">Reset Hotness Difference</button>
+      <span>📜 Viewing {{(page-1)*pageMaxItems+1}}-{{Math.min((page)*pageMaxItems,data.total)}} of {{data.total}} items found in
+        query</span>
+      <a href="https://github.com/willnode/uas-public-stat#readme" target="_blank" rel="noopener">💡 Visit Github source for manual</a>
+    </footer>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
   <script src="main.js"></script>
 </body>

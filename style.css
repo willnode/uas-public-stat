@@ -80,6 +80,12 @@ button {
 	text-align: center;
 }
 
+#pages {
+	overflow-x: scroll;
+	white-space: nowrap;
+	margin-top: 10px;
+}
+
 footer {
 	margin-top: 30px;
 	font-size: 12px;
