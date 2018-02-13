@@ -52,7 +52,7 @@ var data = {
 			data.message = `⛔ Request timed out`;
 		}
 		xhr.open("GET", url, true);
-		xhr.timeout = 10000; // Sometimes it does not reply at all.
+		xhr.timeout = 60000;
 		xhr.setRequestHeader("accept", "application/json")
 		xhr.send();
 	}
